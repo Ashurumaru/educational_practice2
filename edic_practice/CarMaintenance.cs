@@ -16,8 +16,8 @@ namespace edic_practice
     {
         public int MaintenanceID { get; set; }
         public Nullable<int> CarID { get; set; }
-        public Nullable<System.DateTime> MaintenanceStartDate { get; set; }
-        public Nullable<System.DateTime> MaintenanceEndDate { get; set; }
+        public System.DateTime MaintenanceStartDate { get; set; }
+        public System.DateTime MaintenanceEndDate { get; set; }
         public string Description { get; set; }
     
         public virtual Cars Cars { get; set; }

@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocX, Version=1.0.0.22, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.0.0.22\lib\net40\DocX.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -44,6 +47,10 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.8.0.3\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -58,6 +65,12 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Document.NET, Version=3.0.24152.12190, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xceed.Document.NET.3.0.24152.1219\lib\net40\Xceed.Document.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Pdf, Version=3.0.24152.12190, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xceed.Pdf.3.0.24152.1219\lib\net40\Xceed.Pdf.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -91,7 +104,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>database.edmx</DependentUpon>
     </Compile>
+    <Compile Include="model\Car.cs" />
+    <Compile Include="model\CarMaintenence.cs" />
+    <Compile Include="model\CarStatus.cs" />
+    <Compile Include="model\CarType.cs" />
     <Compile Include="model\CurrentUser.cs" />
+    <Compile Include="model\Rental.cs" />
+    <Compile Include="model\RentalPayment.cs" />
+    <Compile Include="model\RentalPrice.cs" />
+    <Compile Include="model\Role.cs" />
+    <Compile Include="model\User.cs" />
+    <Compile Include="model\UserReview.cs" />
     <Compile Include="RentalPayments.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
@@ -110,6 +133,7 @@
     <Compile Include="Users.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
+    <Compile Include="utilites\ReportGenerator.cs" />
     <Compile Include="views\DashboardView.xaml.cs">
       <DependentUpon>DashboardView.xaml</DependentUpon>
     </Compile>
@@ -193,6 +217,7 @@
       <DependentUpon>database.edmx</DependentUpon>
       <LastGenOutput>database.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\подпись.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -11,8 +11,8 @@
           </Key>
           <Property Name="MaintenanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CarID" Type="int" />
-          <Property Name="MaintenanceStartDate" Type="date" />
-          <Property Name="MaintenanceEndDate" Type="date" />
+          <Property Name="MaintenanceStartDate" Type="datetime" Nullable="false" />
+          <Property Name="MaintenanceEndDate" Type="datetime" Nullable="false" />
           <Property Name="Description" Type="text" Nullable="false" />
         </EntityType>
         <EntityType Name="Cars">
@@ -99,7 +99,7 @@
           <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="RoleID" Type="int" />
         </EntityType>
-        <Association Name="FK__CarMainte__CarID__4AB81AF0">
+        <Association Name="FK__CarMainte__CarID__59063A47">
           <End Role="Cars" Type="Self.Cars" Multiplicity="0..1" />
           <End Role="CarMaintenance" Type="Self.CarMaintenance" Multiplicity="*" />
           <ReferentialConstraint>
@@ -218,7 +218,7 @@
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserReviews" EntityType="Self.UserReviews" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__CarMainte__CarID__4AB81AF0" Association="Self.FK__CarMainte__CarID__4AB81AF0">
+          <AssociationSet Name="FK__CarMainte__CarID__59063A47" Association="Self.FK__CarMainte__CarID__59063A47">
             <End Role="Cars" EntitySet="Cars" />
             <End Role="CarMaintenance" EntitySet="CarMaintenance" />
           </AssociationSet>
@@ -270,7 +270,7 @@
           <EntitySet Name="Roles" EntityType="ed_practiceModel.Roles" />
           <EntitySet Name="UserReviews" EntityType="ed_practiceModel.UserReviews" />
           <EntitySet Name="Users" EntityType="ed_practiceModel.Users" />
-          <AssociationSet Name="FK__CarMainte__CarID__4AB81AF0" Association="ed_practiceModel.FK__CarMainte__CarID__4AB81AF0">
+          <AssociationSet Name="FK__CarMainte__CarID__59063A47" Association="ed_practiceModel.FK__CarMainte__CarID__59063A47">
             <End Role="Cars" EntitySet="Cars" />
             <End Role="CarMaintenance" EntitySet="CarMaintenance" />
           </AssociationSet>
@@ -313,10 +313,10 @@
           </Key>
           <Property Name="MaintenanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CarID" Type="Int32" />
-          <Property Name="MaintenanceStartDate" Type="DateTime" Precision="0" />
-          <Property Name="MaintenanceEndDate" Type="DateTime" Precision="0" />
+          <Property Name="MaintenanceStartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MaintenanceEndDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Cars" Relationship="ed_practiceModel.FK__CarMainte__CarID__4AB81AF0" FromRole="CarMaintenance" ToRole="Cars" />
+          <NavigationProperty Name="Cars" Relationship="ed_practiceModel.FK__CarMainte__CarID__59063A47" FromRole="CarMaintenance" ToRole="Cars" />
         </EntityType>
         <EntityType Name="Cars">
           <Key>
@@ -329,7 +329,7 @@
           <Property Name="CarYears" Type="Int32" Nullable="false" />
           <Property Name="LicensePlate" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="StatusID" Type="Int32" />
-          <NavigationProperty Name="CarMaintenance" Relationship="ed_practiceModel.FK__CarMainte__CarID__4AB81AF0" FromRole="Cars" ToRole="CarMaintenance" />
+          <NavigationProperty Name="CarMaintenance" Relationship="ed_practiceModel.FK__CarMainte__CarID__59063A47" FromRole="Cars" ToRole="CarMaintenance" />
           <NavigationProperty Name="CarStatuses" Relationship="ed_practiceModel.FK__Cars__StatusID__4BAC3F29" FromRole="Cars" ToRole="CarStatuses" />
           <NavigationProperty Name="RentalPrices" Relationship="ed_practiceModel.FK__RentalPri__CarID__4E88ABD4" FromRole="Cars" ToRole="RentalPrices" />
           <NavigationProperty Name="Rentals" Relationship="ed_practiceModel.FK__Rentals__CarID__4F7CD00D" FromRole="Cars" ToRole="Rentals" />
@@ -419,7 +419,7 @@
           <NavigationProperty Name="Roles" Relationship="ed_practiceModel.FK__Users__RoleID__5165187F" FromRole="Users" ToRole="Roles" />
           <NavigationProperty Name="UserReviews" Relationship="ed_practiceModel.FK__UserRevie__UserI__5629CD9C" FromRole="Users" ToRole="UserReviews" />
         </EntityType>
-        <Association Name="FK__CarMainte__CarID__4AB81AF0">
+        <Association Name="FK__CarMainte__CarID__59063A47">
           <End Type="ed_practiceModel.Cars" Role="Cars" Multiplicity="0..1" />
           <End Type="ed_practiceModel.CarMaintenance" Role="CarMaintenance" Multiplicity="*" />
           <ReferentialConstraint>
@@ -527,7 +527,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>

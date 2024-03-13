@@ -23,6 +23,9 @@
                         <TabItem Header="Users" Style="{DynamicResource  PersonalAccountItemStyle}">
                             <DockPanel>
                                 <Grid DockPanel.Dock="Top">
+                                    <StackPanel Visibility="{Binding StackPanelVisibility}" DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 0 10 0">
+                                        <TextBox x:Name="FilterTextBox1"  Margin="0,5,0,0" Width="200" TextChanged="FilterTextBox1_TextChanged"/>
+                                    </StackPanel>
                                     <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Bottom">
                                         <TextBlock Text="Database: Users" Style="{DynamicResource  StandartText}" FontSize="20" />
                                     </StackPanel>
@@ -36,7 +39,7 @@
                                             <DataGridTextColumn Width="*" Header="Patronymic" Binding="{Binding Patronymic}"/>
                                             <DataGridTextColumn Width="*" Header="Username" Binding="{Binding Username}"/>
                                             <DataGridTextColumn Width="*" Header="Email" Binding="{Binding Email}"/>
-                                            <DataGridTextColumn Width="*" Header="AccessLevel" Binding="{Binding Roles.RoleName}"/>
+                                            <DataGridTextColumn Width="*" Header="AccessLevel" Binding="{Binding RoleName}"/>
                                         </DataGrid.Columns>
                                     </DataGrid>
                                 </ScrollViewer>
@@ -46,6 +49,9 @@
                         <TabItem Header="Cars" Style="{DynamicResource  PersonalAccountItemStyle}">
                             <DockPanel>
                                 <Grid DockPanel.Dock="Top">
+                                    <StackPanel Visibility="{Binding StackPanelVisibility}" DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 0 10 0">
+                                        <TextBox x:Name="FilterTextBox2"  Margin="0,5,0,0" Width="200" TextChanged="FilterTextBox2_TextChanged"/>
+                                    </StackPanel>
                                     <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Bottom">
                                         <TextBlock Text="Database: Cars" Style="{DynamicResource  StandartText}" FontSize="20" />
                                     </StackPanel>
@@ -54,12 +60,12 @@
                                     <DataGrid x:Name="DataGridCars" RowStyle="{DynamicResource  DataGridRowStyle}" RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Style="{StaticResource DataGridStyle}" CellStyle="{StaticResource  DataGridCellStyle}" Cursor="Hand" >
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Width="57" Header="#" Binding="{Binding CarID}"/>
-                                            <DataGridTextColumn Width="*" Header="CarTypes" Binding="{Binding CarTypes.TypeName}"/>
+                                            <DataGridTextColumn Width="*" Header="CarTypes" Binding="{Binding TypeName}"/>
                                             <DataGridTextColumn Width="*" Header="Brand" Binding="{Binding Brand}"/>
                                             <DataGridTextColumn Width="*" Header="Model" Binding="{Binding Model}"/>
                                             <DataGridTextColumn Width="*" Header="CarYears" Binding="{Binding CarYears}"/>
                                             <DataGridTextColumn Width="*" Header="LicensePlate" Binding="{Binding LicensePlate}"/>
-                                            <DataGridTextColumn Width="*" Header="Status" Binding="{Binding CarStatuses.StatusName}"/>
+                                            <DataGridTextColumn Width="*" Header="Status" Binding="{Binding StatusName}"/>
                                         </DataGrid.Columns>
                                     </DataGrid>
                                 </ScrollViewer>
@@ -68,6 +74,9 @@
                         <TabItem Header="Rentals" Style="{DynamicResource  PersonalAccountItemStyle}">
                             <DockPanel>
                                 <Grid DockPanel.Dock="Top">
+                                    <StackPanel Visibility="{Binding StackPanelVisibility}" DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 0 10 0">
+                                        <TextBox x:Name="FilterTextBox3"  Margin="0,5,0,0" Width="200" TextChanged="FilterTextBox3_TextChanged"/>
+                                    </StackPanel>
                                     <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Bottom">
                                         <TextBlock Text="Database: Cars" Style="{DynamicResource  StandartText}" FontSize="20" />
                                     </StackPanel>
@@ -76,8 +85,8 @@
                                     <DataGrid x:Name="DataGridRentals" RowStyle="{DynamicResource  DataGridRowStyle}" RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Style="{StaticResource DataGridStyle}" CellStyle="{StaticResource  DataGridCellStyle}" Cursor="Hand" >
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Width="57" Header="#" Binding="{Binding RentalID}"/>
-                                            <DataGridTextColumn Width="*" Header="Car" Binding="{Binding Cars.Model}"/>
-                                            <DataGridTextColumn Width="*" Header="Client" Binding="{Binding Users.Username}"/>
+                                            <DataGridTextColumn Width="*" Header="Car" Binding="{Binding Model}"/>
+                                            <DataGridTextColumn Width="*" Header="Client" Binding="{Binding Username}"/>
                                             <DataGridTextColumn Width="*" Header="RentalStartDate" Binding="{Binding RentalStartDate}"/>
                                             <DataGridTextColumn Width="*" Header="RentalEndDate" Binding="{Binding RentalEndDate}"/>
                                             <DataGridTextColumn Width="*" Header="IsReturned" Binding="{Binding IsReturned}"/>
@@ -89,6 +98,9 @@
                         <TabItem Header="Maintenance" Style="{DynamicResource  PersonalAccountItemStyle}">
                             <DockPanel>
                                 <Grid DockPanel.Dock="Top">
+                                    <StackPanel Visibility="{Binding StackPanelVisibility}" DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 0 10 0">
+                                        <TextBox x:Name="FilterTextBox4"  Margin="0,5,0,0" Width="200" TextChanged="FilterTextBox4_TextChanged"/>
+                                    </StackPanel>
                                     <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Bottom">
                                         <TextBlock Text="Database: Maintenance" Style="{DynamicResource  StandartText}" FontSize="20" />
                                     </StackPanel>
@@ -97,7 +109,7 @@
                                     <DataGrid x:Name="DataGridMaintenance" RowStyle="{DynamicResource  DataGridRowStyle}" RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Style="{StaticResource DataGridStyle}" CellStyle="{StaticResource  DataGridCellStyle}" Cursor="Hand" >
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Width="57" Header="#" Binding="{Binding MaintenanceID}"/>
-                                            <DataGridTextColumn Width="*" Header="Car" Binding="{Binding Cars.Model}"/>
+                                            <DataGridTextColumn Width="*" Header="Car" Binding="{Binding Model}"/>
                                             <DataGridTextColumn Width="*" Header="MaintenanceStartDate" Binding="{Binding MaintenanceStartDate}"/>
                                             <DataGridTextColumn Width="*" Header="MaintenanceEndDate" Binding="{Binding MaintenanceEndDate}"/>
                                             <DataGridTextColumn Width="*" Header="Description" Binding="{Binding Description}"/>
@@ -109,6 +121,9 @@
                         <TabItem Header="Reviews" Style="{DynamicResource  PersonalAccountItemStyle}">
                             <DockPanel>
                                 <Grid DockPanel.Dock="Top">
+                                    <StackPanel Visibility="{Binding StackPanelVisibility}" DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0 0 10 0">
+                                        <TextBox x:Name="FilterTextBox5"  Margin="0,5,0,0" Width="200" TextChanged="FilterTextBox5_TextChanged"/>
+                                    </StackPanel>
                                     <StackPanel DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="0 0 10 0" VerticalAlignment="Bottom">
                                         <TextBlock Text="Database: Reviews" Style="{DynamicResource  StandartText}" FontSize="20" />
                                     </StackPanel>
@@ -117,7 +132,7 @@
                                     <DataGrid x:Name="DataGridReviews" RowStyle="{DynamicResource  DataGridRowStyle}" RowHeaderStyle="{StaticResource DataGridRowHeaderStyle}" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" Style="{StaticResource DataGridStyle}" CellStyle="{StaticResource  DataGridCellStyle}" Cursor="Hand" >
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Width="57" Header="#" Binding="{Binding ReviewsID}"/>
-                                            <DataGridTextColumn Width="*" Header="User" Binding="{Binding User.Username}"/>
+                                            <DataGridTextColumn Width="*" Header="User" Binding="{Binding Username}"/>
                                             <DataGridTextColumn Width="*" Header="ReviewDate" Binding="{Binding ReviewDate}"/>
                                             <DataGridTextColumn Width="*" Header="ReviewText" Binding="{Binding ReviewText}"/>
                                             <DataGridTextColumn Width="*" Header="Rating" Binding="{Binding Rating}"/>
@@ -127,7 +142,26 @@
                             </DockPanel>
                         </TabItem>
                         <TabItem Header="Reports" Style="{DynamicResource  PersonalAccountItemStyle}">
-                          
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0"  Margin="10">
+                                    <TextBlock  TextWrapping="Wrap" FontSize="18" Text="Отчёт об автомобилях:" Style="{StaticResource StandartText}" Margin="0,0,0,15"/>
+                                    <Button Style="{StaticResource LoadImageButton}" Margin="15" x:Name="GenerateReportButton" Content="Сгенерировать отчёт" Click="btn_generate_report_cars_Click" Width="204" />
+                                    <TextBlock x:Name="StatusLabelGenerateCar" Style="{StaticResource StandartText }" Margin="10" TextWrapping="Wrap"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Margin="10">
+                                    <TextBlock TextWrapping="Wrap" FontSize="18" Text="Отчет об оказанных услугах:" Style="{StaticResource StandartText }"/>
+                                    <TextBlock FontSize="13" Text="Выберите начальную дату:" Style="{StaticResource StandartText }"/>
+                                    <DatePicker x:Name="StartDatePicker"/>
+                                    <TextBlock FontSize="13" Text="Выберите конечную дату:"  Style="{StaticResource StandartText }"/>
+                                    <DatePicker x:Name="EndDatePicker"/>
+                                    <Button Style="{StaticResource LoadImageButton}" Margin="10"  Content="Сгенерировать отчёт" Click="btn_genarate_report_revenue_Click" Width="222"/>
+                                    <TextBlock x:Name="StatusLabelGenerateRevenue"  Style="{StaticResource StandartText }" Margin="10" TextWrapping="Wrap"/>
+                                </StackPanel>
+                            </Grid>
                         </TabItem>
                     </TabControl>
                     <Grid>
